@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}LetsMeet · Voice{% endblock %}
+
+{% block extra_head %}
+  <link rel="stylesheet" href="{% static 'css/home.css' %}" />
+{% endblock %}
+
+{% block body %}
+  <main class="home-main" data-lk-theme="default">
+    <div class="header hero">
+      <h1>Crystal-clear <span class="accent">Voice Calls</span><br />without the camera</h1>
+      <h2>Start an audio-only room and talk with anyone, anywhere</h2>
+    </div>
+
+    <div class="meet-actions">
+      <button class="lk-button primary" id="start-voice">
+        <span class="icon" aria-hidden="true">🎙️</span>
+        <span>Start a voice room</span>
+      </button>
+      <div class="join-input">
+        <span class="icon" aria-hidden="true">⌨</span>
+        <input id="meeting-code" type="text" placeholder="Enter a code or link" autocomplete="off" />
+        <button class="lk-button join-btn" id="join-meeting" disabled>Join</button>
+      </div>
+    </div>
+  </main>
+{% endblock %}
+
+{% block scripts %}
+  <script>
+    window.SUGGESTED_ROOM_ID = "{{ suggested_room_id }}";
+  </script>
+  <script src="{% static 'js/voice.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Custom Connection{% endblock %}
+
+{% block extra_head %}
+  <link rel="stylesheet" href="{% static 'css/room.css' %}" />
+{% endblock %}
+
+{% block body %}
+  <main class="room-main" data-lk-theme="default">
+    <section id="room" class="room">
+      <div class="grid" id="participant-grid"></div>
+      <div class="toolbar">
+        <button class="lk-button" id="toggle-mic" data-state="on">🎤 Mute</button>
+        <button class="lk-button" id="toggle-cam" data-state="on">📷 Camera off</button>
+        <button class="lk-button" id="switch-cam" hidden aria-label="Switch camera" title="Switch camera">🔄 Flip</button>
+        <button class="lk-button danger" id="leave-button">Leave</button>
+      </div>
+      <div class="status" id="status">Connecting…</div>
+    </section>
+  </main>
+{% endblock %}
+
+{% block scripts %}
+  <script src="https://cdn.jsdelivr.net/npm/livekit-client/dist/livekit-client.umd.min.js"></script>
+  <script>
+    window.LIVEKIT_URL = "{{ livekit_url|escapejs }}";
+    window.LIVEKIT_TOKEN = "{{ token|escapejs }}";
+  </script>
+  <script src="{% static 'js/custom.js' %}"></script>
+{% endblock %}

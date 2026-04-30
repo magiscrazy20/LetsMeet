@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}LetsMeet · Chat{% endblock %}
+
+{% block extra_head %}
+  <link rel="stylesheet" href="{% static 'css/home.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/chat.css' %}" />
+{% endblock %}
+
+{% block body %}
+  <main class="home-main" data-lk-theme="default">
+    <div class="header hero">
+      <h1>Quick <span class="accent">Chat Rooms</span><br />for any conversation</h1>
+      <h2>Spin up a chat room and share the link with anyone you want to talk to</h2>
+    </div>
+
+    <div class="meet-actions">
+      <button class="lk-button primary" id="start-chat">
+        <span class="icon" aria-hidden="true">💬</span>
+        <span>Start a chat room</span>
+      </button>
+      <div class="join-input">
+        <span class="icon" aria-hidden="true">⌨</span>
+        <input id="meeting-code" type="text" placeholder="Enter a code or link" autocomplete="off" />
+        <button class="lk-button join-btn" id="join-meeting" disabled>Join</button>
+      </div>
+    </div>
+
+    <section class="chat-preview">
+      <div class="chat-preview-card">
+        <div class="chat-bubble them">Hey, can you check the design?</div>
+        <div class="chat-bubble me">On it — sending feedback now.</div>
+        <div class="chat-bubble them">Thanks! 🙌</div>
+      </div>
+      <p class="chat-preview-sub">Real-time messaging powered by LiveKit data channels</p>
+    </section>
+  </main>
+{% endblock %}
+
+{% block scripts %}
+  <script>
+    window.SUGGESTED_ROOM_ID = "{{ suggested_room_id }}";
+  </script>
+  <script src="{% static 'js/chat.js' %}"></script>
+{% endblock %}

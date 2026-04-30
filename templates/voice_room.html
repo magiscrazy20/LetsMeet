@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Voice · {{ room_name }}{% endblock %}
+
+{% block extra_head %}
+  <link rel="stylesheet" href="{% static 'css/voice_room.css' %}" />
+{% endblock %}
+
+{% block body %}
+  <main class="voice-main" data-lk-theme="default">
+    <div id="prejoin" class="voice-prejoin">
+      <div class="prejoin-card">
+        <div class="prejoin-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="9" y="3" width="6" height="12" rx="3"></rect>
+            <path d="M5 11a7 7 0 0 0 14 0"></path>
+            <line x1="12" y1="18" x2="12" y2="22"></line>
+            <line x1="8" y1="22" x2="16" y2="22"></line>
+          </svg>
+        </div>
+        <h2>Join voice room</h2>
+        <p class="prejoin-room">Room <code>{{ room_name }}</code></p>
+        <label for="participant-name" class="visually-hidden">Your name</label>
+        <input id="participant-name" type="text" placeholder="Your name" autocomplete="name" />
+        <button class="lk-button primary" id="join-button">
+          <span aria-hidden="true">🎙️</span>
+          <span>Join with audio</span>
+        </button>
+        <p id="prejoin-error" class="error"></p>
+      </div>
+    </div>
+
+    <section id="room" class="voice-room" hidden>
+      <header class="voice-header">
+        <div class="voice-room-name">
+          <span class="dot live" aria-hidden="true"></span>
+          <span>Voice room · <code>{{ room_name }}</code></span>
+        </div>
+        <div class="voice-elapsed" id="elapsed">00:00</div>
+      </header>
+
+      <div class="voice-stage" id="participant-grid"></div>
+
+      <div class="voice-toolbar">
+        <button class="circle-btn" id="toggle-mic" data-state="on" aria-label="Mute microphone" title="Mute">
+          <svg class="ic-on" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="9" y="3" width="6" height="12" rx="3"></rect>
+            <path d="M5 11a7 7 0 0 0 14 0"></path>
+            <line x1="12" y1="18" x2="12" y2="22"></line>
+            <line x1="8" y1="22" x2="16" y2="22"></line>
+          </svg>
+          <svg class="ic-off" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="3" x2="21" y2="21"></line>
+            <path d="M9 9v3a3 3 0 0 0 5.12 2.12"></path>
+            <path d="M15 11V6a3 3 0 0 0-5.66-1.4"></path>
+            <path d="M5 11a7 7 0 0 0 11.5 5.34"></path>
+            <path d="M19 11a7 7 0 0 1-.36 2.22"></path>
+            <line x1="12" y1="18" x2="12" y2="22"></line>
+            <line x1="8" y1="22" x2="16" y2="22"></line>
+          </svg>
+        </button>
+        <button class="circle-btn" id="toggle-speaker" data-state="on" aria-label="Toggle speaker" title="Speaker">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+          </svg>
+        </button>
+        <button class="circle-btn end" id="leave-button" aria-label="Leave call" title="Leave">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92V20a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3.09a2 2 0 0 1 2 1.72c.13.96.37 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            <line x1="3" y1="3" x2="21" y2="21"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="voice-status" id="status"></div>
+    </section>
+  </main>
+{% endblock %}
+
+{% block scripts %}
+  <script src="https://cdn.jsdelivr.net/npm/livekit-client/dist/livekit-client.umd.min.js"></script>
+  <script>
+    window.ROOM_NAME = "{{ room_name|escapejs }}";
+    window.CONNECTION_DETAILS_ENDPOINT = "{{ connection_details_endpoint|escapejs }}";
+  </script>
+  <script src="{% static 'js/voice_room.js' %}"></script>
+{% endblock %}
