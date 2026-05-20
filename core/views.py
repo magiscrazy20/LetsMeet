@@ -23,6 +23,10 @@ COOKIE_KEY = "random-participant-postfix"
 
 
 def home(request: HttpRequest) -> HttpResponse:
+    return render(request, "landing.html")
+
+
+def video(request: HttpRequest) -> HttpResponse:
     return render(
         request,
         "home.html",

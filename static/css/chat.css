@@ -10,7 +10,7 @@
 
 .chat-preview-card {
   width: 100%;
-  background: #181818;
+  background: #14141a;
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 0.75rem;
   padding: 1rem;
@@ -29,14 +29,14 @@
 
 .chat-bubble.them {
   align-self: flex-start;
-  background: #232323;
+  background: #26262f;
   color: #f0f0f0;
   border-bottom-left-radius: 0.25rem;
 }
 
 .chat-bubble.me {
   align-self: flex-end;
-  background: #ff6352;
+  background: #8b5cf6;
   color: #fff;
   border-bottom-right-radius: 0.25rem;
 }

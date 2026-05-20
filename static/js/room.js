@@ -153,7 +153,10 @@
       const ph = tile.querySelector(".placeholder");
       if (ph) ph.remove();
       const el = track.attach();
-      if (isLocal) el.muted = true;
+      if (isLocal) {
+        el.muted = true;
+        el.style.transform = "scaleX(-1)";
+      }
       tile.insertBefore(el, tile.firstChild);
     } else if (track.kind === "audio" && !isLocal) {
       const el = track.attach();

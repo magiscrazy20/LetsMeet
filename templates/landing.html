@@ -1,0 +1,118 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}LetsMeet · Connect anywhere{% endblock %}
+
+{% block extra_head %}
+  <link rel="stylesheet" href="{% static 'css/landing.css' %}" />
+{% endblock %}
+
+{% block body %}
+  <main class="landing-main">
+    <section class="landing-hero">
+      <span class="landing-eyebrow">Welcome</span>
+      <h1>
+        Meet, talk, chat &mdash;<br />
+        <span class="accent">anywhere.</span>
+      </h1>
+      <p class="landing-sub">
+        One simple place for video calls, voice rooms, and chat. Pick how you want to connect and jump right in.
+      </p>
+      <p class="landing-hint" aria-hidden="true">
+        <span class="hint-icon">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </span>
+        Tip: use the menu at the top-left anytime to switch sections.
+      </p>
+    </section>
+
+    <section class="showcase" id="feature-carousel" aria-roledescription="carousel" aria-label="Modes">
+      <div class="showcase-glow" aria-hidden="true"></div>
+
+      <button class="carousel-arrow prev" id="carousel-prev" aria-label="Previous slide">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+      </button>
+
+      <div class="showcase-viewport">
+        <article class="showcase-slide active" data-slide="0" data-accent="video">
+          <div class="showcase-disc">
+            <span class="disc-ring"></span>
+            <span class="disc-ring outer"></span>
+            <span class="disc-core">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="6" width="14" height="12" rx="2"></rect>
+                <path d="M22 8l-6 4 6 4z"></path>
+              </svg>
+            </span>
+          </div>
+          <span class="showcase-eyebrow">Video</span>
+          <h3>Face-to-face. <span class="gradient-text">From anywhere.</span></h3>
+          <p>HD video, screen share, and recording in a single click. Just send a link and you're meeting.</p>
+          <a class="showcase-cta" href="{% url 'video' %}">
+            Start a meeting
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </a>
+        </article>
+
+        <article class="showcase-slide" data-slide="1" data-accent="voice">
+          <div class="showcase-disc">
+            <span class="disc-ring"></span>
+            <span class="disc-ring outer"></span>
+            <span class="disc-core">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="9" y="3" width="6" height="12" rx="3"></rect>
+                <path d="M5 11a7 7 0 0 0 14 0"></path>
+                <line x1="12" y1="18" x2="12" y2="22"></line>
+                <line x1="8" y1="22" x2="16" y2="22"></line>
+              </svg>
+            </span>
+          </div>
+          <span class="showcase-eyebrow">Voice</span>
+          <h3>Audio-first. <span class="gradient-text">Distraction-free.</span></h3>
+          <p>Drop into a voice room for quick syncs, focus calls, or hands-free hangouts &mdash; no camera required.</p>
+          <a class="showcase-cta" href="{% url 'voice' %}">
+            Join a voice room
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </a>
+        </article>
+
+        <article class="showcase-slide" data-slide="2" data-accent="chat">
+          <div class="showcase-disc">
+            <span class="disc-ring"></span>
+            <span class="disc-ring outer"></span>
+            <span class="disc-core">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 15a2 2 0 0 1-2 2H8l-5 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+              </svg>
+            </span>
+          </div>
+          <span class="showcase-eyebrow">Chat</span>
+          <h3>Words travel <span class="gradient-text">light.</span></h3>
+          <p>Text-first rooms when you want a record, not a call. Perfect for low-bandwidth moments.</p>
+          <a class="showcase-cta" href="{% url 'chat' %}">
+            Open a chat room
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </a>
+        </article>
+      </div>
+
+      <button class="carousel-arrow next" id="carousel-next" aria-label="Next slide">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      </button>
+
+      <div class="carousel-dots" id="carousel-dots" role="tablist">
+        <button class="dot active" data-dot="0" role="tab" aria-label="Video" aria-selected="true"></button>
+        <button class="dot" data-dot="1" role="tab" aria-label="Voice" aria-selected="false"></button>
+        <button class="dot" data-dot="2" role="tab" aria-label="Chat" aria-selected="false"></button>
+      </div>
+    </section>
+  </main>
+{% endblock %}
+
+{% block scripts %}
+  <script src="{% static 'js/landing.js' %}"></script>
+{% endblock %}

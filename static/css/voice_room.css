@@ -35,7 +35,7 @@
 .prejoin-card {
   width: 100%;
   max-width: 420px;
-  background: #181818;
+  background: #14141a;
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 1rem;
   padding: 2rem 1.5rem;
@@ -53,8 +53,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 99, 82, 0.15);
-  color: #ff7a6b;
+  background: rgba(139, 92, 246, 0.18);
+  color: #a78bfa;
   margin-bottom: 0.25rem;
 }
 
@@ -78,8 +78,8 @@
 
 .prejoin-card .lk-button.primary {
   width: 100%;
-  background: #ff6352;
-  border-color: #ff6352;
+  background: #8b5cf6;
+  border-color: #8b5cf6;
   color: #fff;
   border-radius: 999px;
   padding: 0.75rem 1.25rem;
@@ -91,13 +91,13 @@
 }
 
 .prejoin-card .lk-button.primary:hover {
-  background: #ff7a6b;
-  border-color: #ff7a6b;
+  background: #a78bfa;
+  border-color: #a78bfa;
 }
 
 .prejoin-card .error {
   margin: 0;
-  color: #ff8a80;
+  color: #f87171;
   font-size: 0.9rem;
   min-height: 1rem;
 }
@@ -196,7 +196,7 @@
   width: 120px;
   height: 120px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #2a2a2a, #1a1a1a);
+  background: linear-gradient(135deg, #2c2c36, #1c1c24);
   border: 1px solid rgba(255, 255, 255, 0.1);
   display: flex;
   align-items: center;
@@ -219,8 +219,8 @@
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  background: #232323;
-  border: 2px solid #111;
+  background: #26262f;
+  border: 2px solid #0a0a0f;
   color: #eee;
   display: flex;
   align-items: center;
@@ -228,7 +228,7 @@
 }
 
 .v-tile.muted .v-mic-badge {
-  background: #b73a2f;
+  background: #dc2626;
   color: #fff;
 }
 
@@ -267,7 +267,7 @@
   height: 56px;
   border-radius: 50%;
   border: 1px solid rgba(255, 255, 255, 0.15);
-  background: #232323;
+  background: #26262f;
   color: #eee;
   cursor: pointer;
   display: inline-flex;
@@ -278,7 +278,7 @@
 }
 
 .circle-btn:hover {
-  background: #2c2c2c;
+  background: #2c2c36;
 }
 
 .circle-btn:active {
@@ -286,8 +286,8 @@
 }
 
 .circle-btn[data-state="off"] {
-  background: #b73a2f;
-  border-color: #b73a2f;
+  background: #dc2626;
+  border-color: #dc2626;
   color: #fff;
 }
 
@@ -304,13 +304,13 @@
 }
 
 .circle-btn.end {
-  background: #b73a2f;
-  border-color: #b73a2f;
+  background: #dc2626;
+  border-color: #dc2626;
   color: #fff;
 }
 
 .circle-btn.end:hover {
-  background: #c84a3f;
+  background: #ef4444;
 }
 
 .voice-status {

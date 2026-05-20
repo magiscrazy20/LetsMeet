@@ -4,7 +4,7 @@
 
 html {
   color-scheme: dark;
-  background-color: #111;
+  background-color: #0a0a0f;
 }
 
 html,
@@ -90,7 +90,7 @@ body {
 }
 
 .brand-logo .brand-accent {
-  color: #ff7a6b;
+  color: #a78bfa;
 }
 
 .brand-logo:hover {
@@ -102,7 +102,7 @@ body {
   top: calc(100% + 0.25rem);
   left: 0.75rem;
   min-width: 220px;
-  background: #1a1a1a;
+  background: #1c1c24;
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 0.75rem;
   padding: 0.5rem;
@@ -139,8 +139,8 @@ body {
 }
 
 .nav-item.active {
-  background: rgba(255, 99, 82, 0.12);
-  color: #ff7a6b;
+  background: rgba(139, 92, 246, 0.14);
+  color: #a78bfa;
 }
 
 .nav-icon {
@@ -181,19 +181,19 @@ footer {
   padding: 1.5rem 2rem;
   text-align: center;
   color: rgba(255, 255, 255, 0.6);
-  background-color: #181818;
+  background-color: #14141a;
   border-top: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 footer a,
 h2 a {
-  color: #ff6352;
-  text-decoration-color: #a33529;
+  color: #8b5cf6;
+  text-decoration-color: #6d28d9;
   text-underline-offset: 0.125em;
 }
 
 footer a:hover {
-  text-decoration-color: #ff6352;
+  text-decoration-color: #8b5cf6;
 }
 
 h2 a {
@@ -203,7 +203,7 @@ h2 a {
 .lk-button {
   appearance: none;
   border: 1px solid rgba(255, 255, 255, 0.2);
-  background: #222;
+  background: #1c1c24;
   color: #eee;
   padding: 0.6rem 1rem;
   font-size: 0.95rem;
@@ -213,30 +213,30 @@ h2 a {
 }
 
 .lk-button:hover {
-  background: #2c2c2c;
+  background: #2c2c36;
 }
 
 .lk-button[aria-pressed="true"] {
-  background: #ff6352;
+  background: #8b5cf6;
   color: #fff;
-  border-color: #ff6352;
+  border-color: #8b5cf6;
 }
 
 .lk-button.danger {
-  background: #b73a2f;
-  border-color: #b73a2f;
+  background: #dc2626;
+  border-color: #dc2626;
   color: #fff;
 }
 
 .lk-button.danger:hover {
-  background: #c84a3f;
+  background: #ef4444;
 }
 
 input[type="text"],
 input[type="url"],
 input[type="password"],
 textarea {
-  background: #1a1a1a;
+  background: #1c1c24;
   color: #eee;
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 0.4rem;
@@ -251,7 +251,7 @@ textarea {
 }
 
 code {
-  background: #1a1a1a;
+  background: #1c1c24;
   padding: 0.1rem 0.4rem;
   border-radius: 0.25rem;
   font-size: 0.9em;
