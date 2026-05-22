@@ -4,9 +4,17 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  padding: 0 1.5rem 4rem;
+  padding: 0 1.5rem 1.25rem;
   gap: 3rem;
   overflow-x: hidden;
+}
+
+.landing-footer {
+  margin-top: auto;
+  padding-top: 1.5rem;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.45);
+  text-align: center;
 }
 
 .landing-hero {
