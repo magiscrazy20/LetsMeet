@@ -11,10 +11,19 @@
 
 .landing-footer {
   margin-top: auto;
-  padding-top: 1.5rem;
+  padding: 1rem 0 0;
+  width: auto;
+  background: transparent;
+  border-top: none;
   font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.45);
+  color: #ffffff;
   text-align: center;
+}
+
+.landing-footer .heart {
+  color: #ef4444;
+  vertical-align: -2px;
+  margin-left: 2px;
 }
 
 .landing-hero {
